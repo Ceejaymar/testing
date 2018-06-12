@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 class CommentBox extends Component {
   state = { comment: '' };
 
-  handleChange = event => {
-    this.setState({ comment: event.target.value })
+  handleChange = e => {
+    this.setState({ comment: e.target.value })
   } 
 
-  onSubmit = event => {
-    event.preventDefault();
+  onSubmit = e => {
+    e.preventDefault();
 
     this.setState({ comment: '' });
   }
@@ -17,7 +17,7 @@ class CommentBox extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <h4>Add a comment</h4>
-        <textarea onChange={this.handleChange} value={this.state.comment} name="" id="" cols="30" rows="10" />
+        <textarea onChange={this.handleChange} value={this.state.comment} />
         <div>
           <button>Submit Comment</button>
         </div>
