@@ -9,7 +9,7 @@ class CommentBox extends Component {
     this.setState({ comment: e.target.value })
   } 
 
-  onSubmit = e => {
+  handleSubmit = e => {
     e.preventDefault();
     this.props.saveComment(this.state.comment);
     this.setState({ comment: '' });
